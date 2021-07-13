@@ -678,6 +678,7 @@ public class NumberPicker extends LinearLayout {
         this(context, null);
     }
 
+    public void onScrollPositionChanged(Integer currentCenteredNumber);
     /**
      * Create a new number picker.
      *
@@ -1312,6 +1313,7 @@ public class NumberPicker extends LinearLayout {
                 onScrollChanged(0, mCurrentScrollOffset, 0, startScrollOffset);
             }
         }
+        onScrollPositionChanged(getSelectorIndices()[mWheelMiddleItemIndex]);
     }
 
     private int computeScrollOffset(boolean isHorizontalMode) {
@@ -2098,6 +2100,12 @@ public class NumberPicker extends LinearLayout {
         mScrollState = scrollState;
         if (mOnScrollListener != null) {
             mOnScrollListener.onScrollStateChange(this, scrollState);
+        }
+    }
+
+    private void onScrollPositionChanged(int item) {
+        if (mOnScrollListener != null) {
+            mOnScrollListener.onScrollPositionChanged(item);
         }
     }
 
