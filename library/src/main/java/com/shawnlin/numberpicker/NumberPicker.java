@@ -1752,12 +1752,14 @@ public class NumberPicker extends LinearLayout {
                 mSelectorWheelPaint.setColor(mSelectedTextColor);
                 mSelectorWheelPaint.setStrikeThruText(mSelectedTextStrikeThru);
                 mSelectorWheelPaint.setUnderlineText(mSelectedTextUnderline);
+                mSelectorWheelPaint.setTypeface(mSelectedTypeface);
             } else {
                 mSelectorWheelPaint.setTextAlign(Paint.Align.values()[mTextAlign]);
                 mSelectorWheelPaint.setTextSize(mTextSize);
                 mSelectorWheelPaint.setColor(mTextColor);
                 mSelectorWheelPaint.setStrikeThruText(mTextStrikeThru);
                 mSelectorWheelPaint.setUnderlineText(mTextUnderline);
+                mSelectorWheelPaint.setTypeface(mTypeface);
             }
 
             int selectorIndex = selectorIndices[isAscendingOrder()
